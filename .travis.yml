@@ -1,4 +1,4 @@
-language: gneric
+language: generic
 sudo: required
 os: linux
 dist: trusty
@@ -20,6 +20,12 @@ matrix:
             - clang-5.0
           sources:
             - llvm-toolchain-trusty-5.0
+    - os: windows
+      compiler: clang
+      before_install:
+        - choco install python3
+        - export PATH="/c/Python37:/c/Python37/Scripts:$PATH"      
+
 compiler:
   - clang
   - gcc
